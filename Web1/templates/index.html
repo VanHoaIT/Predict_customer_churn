@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <link rel="stylesheet" href="index.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Dự đoán bỏ đi</title>
+</head>
+<body>
+    {% include 'header.html' %}
+
+    <form action="/predict" method="post" class="input_table">
+        <label>Tổng số lần giao dịch:</label>
+        <input placeholder="20" type="number" name="Total_Trans_Ct" step="any" required  class="input_number"><br><br>
+
+        <label>Tổng số tiền giao dịch:</label>
+        <input placeholder="10000" type="number" name="Total_Trans_Amt" step="any" required class="input_number" ><br><br>
+
+        <label>Tổng số tiền nợ còn lại:</label>
+        <input placeholder="100" type="number" name="Total_Revolving_Bal" step="any" required class="input_number"><br><br>
+
+        <label>Tổng thay đổi số lần giao dịch từ Q4 đến Q1:</label>
+        <input placeholder="2" type="number" name="Total_Ct_Chng_Q4_Q1" step="any" required class="input_number"><br><br>
+
+        <label>Tỉ lệ sử dụng trung bình thẻ 0 - 1:</label>
+        <input placeholder="0.2" type="number" name="Avg_Utilization_Ratio" step="any" required class="input_number"><br><br>
+
+        <label>Tổng thay đổi số tiền giao dịch từ Q4 đến Q1:</label>
+        <input placeholder="2" type="number" name="Total_Amt_Chng_Q4_Q1" step="any" required class="input_number"><br><br>
+
+        <label>Tổng số sản phẩm:</label>
+        <input placeholder="2" type="number" name="Total_Relationship_Count" step="any" required class="input_number"><br><br>
+
+        <input type="submit" value="Dự đoán" class="button">        
+    </form>
+    
+    {% include 'footer.html' %}
+    
+</body>
+</html>

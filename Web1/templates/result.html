@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Kết quả</title>
+</head>
+<body>
+    {% include 'header.html' %}
+
+    <br>
+    <h2 style="font-size: 25px;">Kết quả</h2>
+    <table align="center" border="1" class="table_Result">
+        <tr>
+            <td><label>Tổng số lần giao dịch</label></td>
+            <td><p>{{Total_Trans_Ct}}</p></td>
+        </tr>
+        <tr>
+            <td><label>Tổng số tiền giao dịch</label></td>
+            <td><p>{{Total_Trans_Amt}}</p></td>
+        </tr>
+        <tr>
+            <td><label>Tổng số tiền nợ còn lại</label></td>
+            <td><p>{{Total_Revolving_Bal}}</p></td>
+        </tr>
+        <tr>
+            <td><label>Tổng số lần giao dịch từ Q4 đến Q1</label></td>
+            <td><p>{{Total_Ct_Chng_Q4_Q1}}</p></td>
+        </tr>
+        <tr>
+            <td><label>Tỉ lệ sử dụng trung bình thẻ</label></td>
+            <td><p>{{Avg_Utilization_Ratio}}</p></td>
+        </tr>
+        <tr>
+            <td><label>Tổng số tiền giao dịch từ Q4 đến Q1</label></td>
+            <td><p>{{Total_Amt_Chng_Q4_Q1}}</p></td>
+        </tr>
+        <tr>
+            <td><label>Tổng số sản phẩm</label></td>
+            <td><p>{{Total_Relationship_Count}}</p></td>
+        </tr>
+    </table>
+
+    <div class="result">
+        <h3>Khả năng rời đi: {{ probability_text }} %</h3>
+        <h3>{{ prediction_text }}</h3>
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+</html>
